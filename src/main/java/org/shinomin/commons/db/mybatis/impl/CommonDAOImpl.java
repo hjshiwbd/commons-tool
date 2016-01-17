@@ -2,19 +2,19 @@ package org.shinomin.commons.db.mybatis.impl;
 
 import java.util.List;
 
-import org.shinomin.commons.db.mybatis.IMysqlDAO;
-import org.shinomin.commons.db.mybatis.IMysqlDAOsuport;
+import org.shinomin.commons.db.mybatis.ICommonDAO;
+import org.shinomin.commons.db.mybatis.ICommonDAOsuport;
 import org.shinomin.commons.db.mybatis.Pager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 
-public abstract class MysqlDAO implements IMysqlDAO
+public abstract class CommonDAOImpl implements ICommonDAO
 {
 	@Autowired
 	@Qualifier("daoSupport")
-	protected IMysqlDAOsuport mysqlDAOsuport;
+	protected ICommonDAOsuport mysqlDAOsuport;
 
-	public void setMysqlDAOsuport(IMysqlDAOsuport mysqlDAOsuport)
+	public void setMysqlDAOsuport(ICommonDAOsuport mysqlDAOsuport)
 	{
 		this.mysqlDAOsuport = mysqlDAOsuport;
 	}

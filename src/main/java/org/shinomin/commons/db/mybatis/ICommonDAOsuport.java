@@ -3,7 +3,7 @@ package org.shinomin.commons.db.mybatis;
 import java.util.List;
 import java.util.Map;
 
-public interface IMysqlDAOsuport {
+public interface ICommonDAOsuport {
     /**
      * 查询单个对象
      *

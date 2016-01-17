@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.mybatis.spring.support.SqlSessionDaoSupport;
-import org.shinomin.commons.db.mybatis.IMysqlDAOsuport;
+import org.shinomin.commons.db.mybatis.ICommonDAOsuport;
 import org.shinomin.commons.db.mybatis.Pager;
 import org.shinomin.commons.utils.ConvertUtil;
 import org.shinomin.commons.utils.MybatisSqlHelper;
@@ -19,7 +19,7 @@ import com.github.miemiedev.mybatis.paginator.domain.Order;
 import com.github.miemiedev.mybatis.paginator.domain.PageBounds;
 import com.github.miemiedev.mybatis.paginator.domain.PageList;
 
-public class MysqlDAOSuport extends SqlSessionDaoSupport implements IMysqlDAOsuport
+public class CommonDAOSuportImpl extends SqlSessionDaoSupport implements ICommonDAOsuport
 {
 	private Logger logger = LoggerFactory.getLogger(getClass());
 

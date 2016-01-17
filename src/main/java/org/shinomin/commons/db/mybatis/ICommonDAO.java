@@ -2,7 +2,7 @@ package org.shinomin.commons.db.mybatis;
 
 import java.util.List;
 
-public interface IMysqlDAO {
+public interface ICommonDAO {
 
     /**
      * mapper命名空间的前缀

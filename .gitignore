@@ -1,0 +1,8 @@
+*.settings
+*.idea
+*.bat
+*.project
+*.classpath
+*.iml
+*target/
+dependency-reduced-pom.xml

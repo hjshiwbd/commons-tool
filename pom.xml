@@ -5,10 +5,16 @@
 
 	<groupId>hjin.commons</groupId>
 	<artifactId>commons-tool</artifactId>
-	<version>1.1.1</version>
+	<version>1.1.2</version>
 	<packaging>jar</packaging>
 
 	<name>commons-tool</name>
+
+    <description>
+        ---
+        1.1.2
+        修复sha1加密的bug
+    </description>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

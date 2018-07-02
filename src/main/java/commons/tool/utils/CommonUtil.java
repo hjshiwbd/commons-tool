@@ -21,27 +21,27 @@ public class CommonUtil {
      * @author hjin
      */
     public static String encryptSHA1(String str) {
-        MessageDigest md = null;
+        if(str==null||str.length()==0){
+            return null;
+        }
+        char hexDigits[] = {'0','1','2','3','4','5','6','7','8','9',
+                'a','b','c','d','e','f'};
         try {
-            md = MessageDigest.getInstance("SHA-1");
-            md.update(str.getBytes("UTF-8"));
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
-        byte[] result = md.digest();
+            MessageDigest mdTemp = MessageDigest.getInstance("SHA1");
+            mdTemp.update(str.getBytes("UTF-8"));
 
-        StringBuffer sb = new StringBuffer();
-
-        for (byte b : result) {
-            int i = b & 0xff;
-            if (i < 0xf) {
-                sb.append(0);
+            byte[] md = mdTemp.digest();
+            int j = md.length;
+            char buf[] = new char[j*2];
+            int k = 0;
+            for (byte byte0 : md) {
+                buf[k++] = hexDigits[byte0 >>> 4 & 0xf];
+                buf[k++] = hexDigits[byte0 & 0xf];
             }
-            sb.append(Integer.toHexString(i));
+            return new String(buf);
+        } catch (Exception e) {
+            return null;
         }
-        return sb.toString().toUpperCase();
     }
 
     /**

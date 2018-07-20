@@ -35,4 +35,18 @@ public class ConnUtil {
 
         return conn;
     }
+
+    public static Connection getMysqlConn(String driver, String url, String username, String password) {
+        Connection conn = null;
+        try {
+            Class.forName(driver);
+            conn = DriverManager.getConnection(url, username, password);
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return conn;
+    }
 }

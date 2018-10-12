@@ -1,66 +1,74 @@
 package commons.tool.bean;
 
-public class ExecuteResult
-{
-	/**
-	 * 执行结果.0失败1成功
-	 */
-	private String result;
-	/**
-	 * 执行结果描述
-	 */
-	private String message;
-	/**
-	 * 执行结果携带返回值
-	 */
-	private Object object;
+import commons.tool.utils.JsonUtil;
 
-	public ExecuteResult()
-	{
+public class ExecuteResult {
+    /**
+     * 执行结果.1成功,其他失败
+     */
+    private String result;
+    /**
+     * 执行结果描述,代码级消息提示
+     */
+    private String message = "unknown_error";
+    /**
+     * 执行结果描述,展示级消息提示
+     */
+    private String message2 = "系统异常，请稍候再试";
+    /**
+     * 执行结果携带返回值
+     */
+    private Object object;
 
-	}
+    public ExecuteResult() {
 
-	public ExecuteResult(String result, String message)
-	{
-		this.result = result;
-		this.message = message;
-	}
+    }
 
-	public ExecuteResult(String result, String message, Object object)
-	{
-		this.result = result;
-		this.message = message;
-		this.object = object;
-	}
+    public ExecuteResult(String result, String message) {
+        this.result = result;
+        this.message = message;
+    }
 
-	public String getResult()
-	{
-		return result;
-	}
+    public ExecuteResult(String result, String message, Object object) {
+        this.result = result;
+        this.message = message;
+        this.object = object;
+    }
 
-	public void setResult(String result)
-	{
-		this.result = result;
-	}
+    public String getResult() {
+        return result;
+    }
 
-	public String getMessage()
-	{
-		return message;
-	}
+    public void setResult(String result) {
+        this.result = result;
+    }
 
-	public void setMessage(String message)
-	{
-		this.message = message;
-	}
+    public String getMessage() {
+        return message;
+    }
 
-	public Object getObject()
-	{
-		return object;
-	}
+    public void setMessage(String message) {
+        this.message = message;
+    }
 
-	public void setObject(Object object)
-	{
-		this.object = object;
-	}
+    public Object getObject() {
+        return object;
+    }
 
+    public void setObject(Object object) {
+        this.object = object;
+    }
+
+    public String getMessage2() {
+        return message2;
+    }
+
+    public void setMessage2(String message2) {
+        this.message2 = message2;
+    }
+
+    @Override
+    public String toString() {
+        return JsonUtil.toJson(this);
+    }
 }

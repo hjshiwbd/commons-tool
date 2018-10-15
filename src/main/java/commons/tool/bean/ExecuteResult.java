@@ -6,7 +6,7 @@ public class ExecuteResult {
     /**
      * 执行结果.1成功,其他失败
      */
-    private String result;
+    private String result = "0";
     /**
      * 执行结果描述,代码级消息提示
      */
@@ -24,6 +24,10 @@ public class ExecuteResult {
 
     }
 
+    public ExecuteResult(String result) {
+        this.result = result;
+    }
+
     public ExecuteResult(String result, String message) {
         this.result = result;
         this.message = message;
@@ -32,6 +36,13 @@ public class ExecuteResult {
     public ExecuteResult(String result, String message, Object object) {
         this.result = result;
         this.message = message;
+        this.object = object;
+    }
+
+    public ExecuteResult(String result, String message, String message2, Object object) {
+        this.result = result;
+        this.message = message;
+        this.message2 = message2;
         this.object = object;
     }
 

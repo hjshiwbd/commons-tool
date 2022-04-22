@@ -143,15 +143,10 @@
 		</plugins>
 	</build>
 	<distributionManagement>
-		<repository>
-			<id>nexus-releases</id>
-			<name>Releases</name>
-			<url>http://dev001.rz:8081/repository/maven-releases/</url>
-		</repository>
-		<snapshotRepository>
-			<id>nexus-snapshots</id>
-			<name>Snapshots</name>
-			<url>http://dev001.rz:8081/repository/maven-snapshots/</url>
-		</snapshotRepository>
-	</distributionManagement>
+        <repository>
+            <id>releases</id>
+            <name>yuzhi-repo-release</name>
+			<url>http://repo.yz.cn/repository/maven-releases/</url>
+        </repository>
+    </distributionManagement>
 </project>
